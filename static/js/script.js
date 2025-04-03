@@ -119,3 +119,11 @@ function verificarColisao() {
         gameOver();
     }
 }
+
+//game over
+function gameOver() {
+    clearInterval(intervalo);
+    startJogo = false;
+    console.log("Acabou tu perdeu aceite... :)");
+}
+
