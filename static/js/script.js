@@ -64,7 +64,7 @@ function mover()
     verificarColisao();//verifica a posição sempre que mover
 }
 
-// Iniciar o jogo
+//inicia o jogo
 function start() 
 {
     if (!startJogo) {
@@ -106,3 +106,16 @@ document.addEventListener('keydown', apertar);
 document.addEventListener('keydown', function(event) {
     console.log("Tecla pressionada:", event.key);
 });
+
+// verificar colisão
+function verificarColisao() {
+    const cabeca = cobra[0];
+
+    // colisão com a parede (fora do grid 20x20)
+    if (cabeca.x < 1 || cabeca.x > 20 || cabeca.y < 1 || cabeca.y > 20) {
+        //Se for para a posição x < 1 no grid vai sair do grid ai precisa de um game over, oo contrario acontece com o x >20 que ai ele vai muito pra direita saindo do grid
+        // a mesma coisa acontece pra cima e pra baixo com o Y
+        console.log("Bateu na parede, burrão KKKKKK");
+        gameOver();
+    }
+}
